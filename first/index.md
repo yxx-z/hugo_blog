@@ -16,5 +16,5 @@ public class Test{
 ---
 
 > 作者: map[avatar:<nil> email:<nil> link:<nil> name:yxx]  
-> URL: http://example.org/first/  
+> URL: https://yxx-z.github.io/hugo_blog/first/  
 

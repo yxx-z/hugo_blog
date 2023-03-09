@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>所有文章 - YBLog</title>
-    <link>http://example.org/posts/</link>
+    <link>https://yxx-z.github.io/hugo_blog/posts/</link>
     <description>所有文章 | YBLog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>yangxx@88.com (yxx)</managingEditor>
-      <webMaster>yangxx@88.com (yxx)</webMaster><lastBuildDate>Thu, 09 Mar 2023 11:14:08 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>yangxx@88.com (yxx)</webMaster><lastBuildDate>Thu, 09 Mar 2023 11:14:08 &#43;0800</lastBuildDate><atom:link href="https://yxx-z.github.io/hugo_blog/posts/" rel="self" type="application/rss+xml" /><item>
   <title>开篇!</title>
-  <link>http://example.org/first/</link>
+  <link>https://yxx-z.github.io/hugo_blog/first/</link>
   <pubDate>Thu, 09 Mar 2023 11:14:08 &#43;0800</pubDate>
   <author>map[avatar:&lt;nil&gt; email:&lt;nil&gt; link:&lt;nil&gt; name:yxx]</author>
-  <guid>http://example.org/first/</guid>
+  <guid>https://yxx-z.github.io/hugo_blog/first/</guid>
   <description><![CDATA[<p>代码块测试</p>]]></description>
 </item>
 </channel>
