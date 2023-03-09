@@ -1,5 +1,6 @@
 title = "YBLog"
-baseURL = "https://yxx-z.github.io/"
+# baseURL = "https://yxx-z.github.io/"
+baseURL = "http://localhost:1313/"
 # 设置默认的语言 ["en", "zh-cn", "fr", "pl", ...]
 defaultContentLanguage = "zh-cn"
 # 网站语言, 仅在这里 CN 大写 ["en", "zh-CN", "fr", "pl", ...]
@@ -82,7 +83,7 @@ theme = "FixIt"
     # 是否隐藏网站图标资源链接
     noFavicon = false
     # 更现代的 SVG 网站图标，可替代旧的 .png 和 .ico 文件
-    svgFavicon = ""
+    svgFavicon = "/images/fixit.min.svg"
     # Safari 图标颜色
     iconColor = "#5bbad5"
     # Windows v8-10 磁贴颜色
@@ -134,7 +135,7 @@ theme = "FixIt"
     #  页面头部导航栏标题配置
     [params.header.title]
       # LOGO 的 URL
-      logo = "/fixit.min.svg"
+      logo = "/images/fixit.min.svg"
       # 标题名称
       name = ""
       # 你可以在名称（允许 HTML 格式）之前添加其他信息，例如图标
