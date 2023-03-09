@@ -36,9 +36,9 @@ repost:
 
 # See details front matter: https://fixit.lruihao.cn/documentation/content/#front-matter
 ---
-经历了国内云服务器被封导致以前的博客被封后，转战静态博客，部署github上
+**新的篇章，新的开始**
 <!--more-->
+</br>
 
-## 千里之行始于足下
-新的篇章，新的开始
+经历了国内云服务器被封导致以前的博客全部丢失，现在转战静态博客，部署github上
 
