@@ -1,5 +1,5 @@
 title = "YBLog"
-baseURL = "http://example.org/"
+baseURL = "https://yxx-z.github.io/"
 # 设置默认的语言 ["en", "zh-cn", "fr", "pl", ...]
 defaultContentLanguage = "zh-cn"
 # 网站语言, 仅在这里 CN 大写 ["en", "zh-CN", "fr", "pl", ...]
@@ -51,7 +51,7 @@ theme = "FixIt"
 
 [params]
   #  FixIt 主题版本
-  version = "0.2.17" # 例如："0.2.X", "0.2.15", "v0.2.15" 等
+  version = "0.2.X" # 例如："0.2.X", "0.2.15", "v0.2.15" 等
   # 网站描述
   description = "YBLog"
   # 网站关键词
