@@ -4,9 +4,17 @@
     <link>http://localhost:1313/</link>
     <description>YBLog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>yangxx@88.com (yxx)</managingEditor>
-      <webMaster>yangxx@88.com (yxx)</webMaster><lastBuildDate>Thu, 09 Mar 2023 11:14:08 &#43;0800</lastBuildDate>
+      <webMaster>yangxx@88.com (yxx)</webMaster><lastBuildDate>Fri, 10 Mar 2023 15:32:40 &#43;0800</lastBuildDate>
       <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>java中通用树状菜单工具类</title>
+  <link>http://localhost:1313/tree/</link>
+  <pubDate>Fri, 10 Mar 2023 15:32:40 &#43;0800</pubDate>
+  <author>map[avatar:&lt;nil&gt; email:&lt;nil&gt; link:&lt;nil&gt; name:yxx]</author>
+  <guid>http://localhost:1313/tree/</guid>
+  <description><![CDATA[<p>开发中经常遇到树状结构，每次都要写比较麻烦。这里写了一个工具类简化其中的步骤</p>]]></description>
+</item>
+<item>
   <title>开篇!</title>
   <link>http://localhost:1313/first/</link>
   <pubDate>Thu, 09 Mar 2023 11:14:08 &#43;0800</pubDate>
