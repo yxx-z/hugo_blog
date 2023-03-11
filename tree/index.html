@@ -10,7 +10,7 @@
 <meta name="description" content="开发中经常遇到树状结构，每次都要写比较麻烦。这里写了一个工具类简化其中的步骤" /><meta name="keywords" content='tree' /><meta itemprop="name" content="java中通用树状菜单工具类">
 <meta itemprop="description" content="开发中经常遇到树状结构，每次都要写比较麻烦。这里写了一个工具类简化其中的步骤"><meta itemprop="datePublished" content="2023-03-10T15:32:40+08:00" />
 <meta itemprop="dateModified" content="2023-03-10T15:32:40+08:00" />
-<meta itemprop="wordCount" content="1477"><meta itemprop="image" content="http://localhost:1313/logo.png"/>
+<meta itemprop="wordCount" content="1286"><meta itemprop="image" content="http://localhost:1313/logo.png"/>
 <meta itemprop="keywords" content="tree," /><meta property="og:title" content="java中通用树状菜单工具类" />
 <meta property="og:description" content="开发中经常遇到树状结构，每次都要写比较麻烦。这里写了一个工具类简化其中的步骤" />
 <meta property="og:type" content="article" />
@@ -33,7 +33,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/localhost:1313\/tree\/"
-    },"genre": "posts","keywords": "tree","wordcount":  1477 ,
+    },"genre": "posts","keywords": "tree","wordcount":  1286 ,
     "url": "http:\/\/localhost:1313\/tree\/","datePublished": "2023-03-10T15:32:40+08:00","dateModified": "2023-03-10T15:32:40+08:00","publisher": {
       "@type": "Organization",
       "name": "yxx"},"author": {
@@ -150,9 +150,10 @@
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" srcset="/images/avatar.png, /images/avatar.png 1.5x, /images/avatar.png 2x" sizes="auto" data-title="yxx" data-alt="yxx" class="avatar" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/>&nbsp;yxx</span></span>
           <span class="post-category">收录于 <a href="/categories/java/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> java</a></span></div>
-      <div class="post-meta-line"><span title=2023-03-10&#32;15:32:40><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-10">2023-03-10</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 1477 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 3 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title=2023-03-10&#32;15:32:40><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-10">2023-03-10</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 1286 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="content" id="content"><p>开发中经常遇到树状结构，每次都要写比较麻烦。这里写了一个工具类简化其中的步骤</p>
-<p>话不多说，上代码</p>
+<p>这里用了java8函数式编程特性
+话不多说，上代码</p>
 <hr>
 </br>
 菜单类
@@ -422,241 +423,147 @@
 </span><span class="lnt">138
 </span><span class="lnt">139
 </span><span class="lnt">140
-</span><span class="lnt">141
-</span><span class="lnt">142
-</span><span class="lnt">143
-</span><span class="lnt">144
-</span><span class="lnt">145
-</span><span class="lnt">146
-</span><span class="lnt">147
-</span><span class="lnt">148
-</span><span class="lnt">149
-</span><span class="lnt">150
-</span><span class="lnt">151
-</span><span class="lnt">152
-</span><span class="lnt">153
-</span><span class="lnt">154
-</span><span class="lnt">155
-</span><span class="lnt">156
-</span><span class="lnt">157
-</span><span class="lnt">158
-</span><span class="lnt">159
-</span><span class="lnt">160
-</span><span class="lnt">161
-</span><span class="lnt">162
-</span><span class="lnt">163
-</span><span class="lnt">164
-</span><span class="lnt">165
-</span><span class="lnt">166
-</span><span class="lnt">167
-</span><span class="lnt">168
-</span><span class="lnt">169
-</span><span class="lnt">170
-</span><span class="lnt">171
-</span><span class="lnt">172
-</span><span class="lnt">173
-</span><span class="lnt">174
-</span><span class="lnt">175
-</span><span class="lnt">176
-</span><span class="lnt">177
-</span><span class="lnt">178
-</span><span class="lnt">179
-</span><span class="lnt">180
-</span><span class="lnt">181
-</span><span class="lnt">182
-</span><span class="lnt">183
-</span><span class="lnt">184
-</span><span class="lnt">185
-</span><span class="lnt">186
-</span><span class="lnt">187
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">cn.hutool.core.collection.CollUtil</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">cn.hutool.core.text.CharSequenceUtil</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">lombok.AllArgsConstructor</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">lombok.Data</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">lombok.NoArgsConstructor</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">lombok.experimental.Accessors</span><span class="o">;</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.yunjia.eduction.utils.tree</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nn">java.beans.PropertyDescriptor</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.lang.reflect.Method</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.function.BiConsumer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.function.Function</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.stream.Collectors</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.stream.Stream</span><span class="o">;</span>
 
 <span class="cm">/**
 </span><span class="cm"> * @author yxx
-</span><span class="cm"> * @apiNote 返回层级菜单
-</span><span class="cm"> * @date 2023-03-10 14:51
+</span><span class="cm"> * @apiNote 通用树形工具类
+</span><span class="cm"> * @since 2023-03-11 14:22
 </span><span class="cm"> */</span>
-<span class="nd">@Data</span>
-<span class="nd">@AllArgsConstructor</span>
-<span class="nd">@NoArgsConstructor</span>
-<span class="nd">@Accessors</span><span class="o">(</span><span class="n">chain</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TreeMenuUtil</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
-    <span class="cm">/**
-</span><span class="cm">     * 顶层节点的值
-</span><span class="cm">     */</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">rootValue</span><span class="o">;</span>
-    <span class="cm">/**
-</span><span class="cm">     * 对应父节点的子属性
-</span><span class="cm">     */</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">childKey</span><span class="o">;</span>
-    <span class="cm">/**
-</span><span class="cm">     * 父节点的属性值
-</span><span class="cm">     */</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">rootKey</span><span class="o">;</span>
-    <span class="cm">/**
-</span><span class="cm">     * 子菜单放置的字段
-</span><span class="cm">     */</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">childProperty</span><span class="o">;</span>
-    <span class="cm">/**
-</span><span class="cm">     * 要过滤的集合
-</span><span class="cm">     */</span>
-    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TreeUtil</span> <span class="o">{</span>
 
-    <span class="cm">/**
-</span><span class="cm">     * @return List
-</span><span class="cm">     * @apiNote 返回树状菜单
-</span><span class="cm">     */</span>
-    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">rootMenu</span><span class="o">()</span> <span class="o">{</span>
-        <span class="c1">//判断rootValue是否为空，如果为空的话给rootValue赋值
-</span><span class="c1"></span>        <span class="n">ifNullRootValueSetValue</span><span class="o">();</span>
-        <span class="c1">//筛选出来顶级目录
-</span><span class="c1"></span>        <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">rootList</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
-                <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">item</span> <span class="o">-&gt;</span> <span class="n">CharSequenceUtil</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">rootValue</span><span class="o">,</span> <span class="n">getValueByProperty</span><span class="o">(</span><span class="n">item</span><span class="o">,</span> <span class="n">childKey</span><span class="o">)))</span>
-                <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
-        <span class="c1">//从数据集合中剔除顶层目录，减少后续遍历次数，加快速度
-</span><span class="c1"></span>        <span class="n">list</span><span class="o">.</span><span class="na">removeAll</span><span class="o">(</span><span class="n">rootList</span><span class="o">);</span>
-        <span class="c1">//如果list不为空的话则遍历赋值子菜单
-</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">CollUtil</span><span class="o">.</span><span class="na">isNotEmpty</span><span class="o">(</span><span class="n">rootList</span><span class="o">))</span> <span class="o">{</span>
-            <span class="k">for</span> <span class="o">(</span><span class="n">T</span> <span class="n">t</span> <span class="o">:</span> <span class="n">rootList</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">setChildren</span><span class="o">(</span><span class="n">t</span><span class="o">,</span> <span class="n">list</span><span class="o">);</span>
-            <span class="o">}</span>
-            <span class="k">return</span> <span class="n">rootList</span><span class="o">;</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="n">list</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
 
-    <span class="cm">/**
-</span><span class="cm">     * 判断rootKey是空值的话则赋值
-</span><span class="cm">     */</span>
-    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">ifNullRootValueSetValue</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">CharSequenceUtil</span><span class="o">.</span><span class="na">isBlank</span><span class="o">(</span><span class="n">rootValue</span><span class="o">))</span> <span class="o">{</span>
-            <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">rootValueSet</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
-                    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">m</span> <span class="o">-&gt;</span> <span class="n">getValueByProperty</span><span class="o">(</span><span class="n">m</span><span class="o">,</span> <span class="n">rootKey</span><span class="o">))</span>
-                    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toSet</span><span class="o">());</span>
-            <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">childValueSet</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
-                    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">m</span> <span class="o">-&gt;</span> <span class="n">getValueByProperty</span><span class="o">(</span><span class="n">m</span><span class="o">,</span> <span class="n">childKey</span><span class="o">))</span>
-                    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toSet</span><span class="o">());</span>
-            <span class="c1">//将childKey（parentId）中的数据全部赋值过来
-</span><span class="c1"></span>            <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">resultList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;(</span><span class="n">childValueSet</span><span class="o">);</span>
-            <span class="c1">//算出childValueSet和rootValueSet的交集
-</span><span class="c1"></span>            <span class="n">childValueSet</span><span class="o">.</span><span class="na">retainAll</span><span class="o">(</span><span class="n">rootValueSet</span><span class="o">);</span>
-            <span class="c1">// 算出childValueSet 与交集不同的部分
-</span><span class="c1"></span>            <span class="n">resultList</span><span class="o">.</span><span class="na">removeAll</span><span class="o">(</span><span class="n">childValueSet</span><span class="o">);</span>
-            <span class="c1">//如果有差集的话，把第一个数据返回到rootValue中
-</span><span class="c1"></span>            <span class="k">if</span> <span class="o">(</span><span class="n">CollUtil</span><span class="o">.</span><span class="na">isNotEmpty</span><span class="o">(</span><span class="n">resultList</span><span class="o">))</span> <span class="o">{</span>
-                <span class="n">rootValue</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">resultList</span><span class="o">.</span><span class="na">toArray</span><span class="o">()[</span><span class="n">0</span><span class="o">]);</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="cm">/**
-</span><span class="cm">     * 给父级菜单赋值子菜单
+    <span class="cm">/***
+</span><span class="cm">     * 构建树
 </span><span class="cm">     *
-</span><span class="cm">     * @param t    父菜单对象
-</span><span class="cm">     * @param list 所有数据
+</span><span class="cm">     * @param listData 需要构建的结果集
+</span><span class="cm">     * @param parentKeyFunction 父节点id
+</span><span class="cm">     * @param keyFunction 主键
+</span><span class="cm">     * @param setChildrenFunction 子集
+</span><span class="cm">     * @param rootParentValue 父节点的值 0就填0 null就填null
+</span><span class="cm">     * @return java.util.List&lt;T&gt;
 </span><span class="cm">     */</span>
-    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">setChildren</span><span class="o">(</span><span class="n">T</span> <span class="n">t</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">String</span> <span class="n">childPropertyTypeName</span> <span class="o">=</span> <span class="n">Objects</span><span class="o">.</span><span class="na">requireNonNull</span><span class="o">(</span><span class="n">getPropertyDescriptor</span><span class="o">(</span><span class="n">t</span><span class="o">,</span> <span class="n">childProperty</span><span class="o">)).</span><span class="na">getPropertyType</span><span class="o">().</span><span class="na">getName</span><span class="o">();</span>
-        <span class="n">Stream</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">childStream</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
-                <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">item</span> <span class="o">-&gt;</span> <span class="n">isChild</span><span class="o">(</span><span class="n">t</span><span class="o">,</span> <span class="n">item</span><span class="o">));</span>
-        <span class="n">Collection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">childList</span><span class="o">;</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">childPropertyTypeName</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">&#34;Set&#34;</span><span class="o">))</span> <span class="o">{</span>
-            <span class="n">childList</span> <span class="o">=</span> <span class="n">childStream</span><span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toSet</span><span class="o">());</span>
-            <span class="n">setValueByProperty</span><span class="o">(</span><span class="n">t</span><span class="o">,</span> <span class="n">childList</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-            <span class="n">childList</span> <span class="o">=</span> <span class="n">childStream</span><span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
-            <span class="n">setValueByProperty</span><span class="o">(</span><span class="n">t</span><span class="o">,</span> <span class="n">childList</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="n">list</span><span class="o">.</span><span class="na">removeAll</span><span class="o">(</span><span class="n">childList</span><span class="o">);</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">CollUtil</span><span class="o">.</span><span class="na">isNotEmpty</span><span class="o">(</span><span class="n">childList</span><span class="o">))</span> <span class="o">{</span>
-            <span class="k">for</span> <span class="o">(</span><span class="n">T</span> <span class="n">item</span> <span class="o">:</span> <span class="n">childList</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">setChildren</span><span class="o">(</span><span class="n">item</span><span class="o">,</span> <span class="n">list</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">U</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&gt;</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">buildTree</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">listData</span><span class="o">,</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">U</span><span class="o">&gt;</span> <span class="n">parentKeyFunction</span><span class="o">,</span>
+                                                              <span class="n">Function</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="o">?</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&gt;</span> <span class="n">keyFunction</span><span class="o">,</span> <span class="n">BiConsumer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="n">setChildrenFunction</span><span class="o">,</span> <span class="n">U</span> <span class="n">rootParentValue</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">buildTree</span><span class="o">(</span><span class="n">listData</span><span class="o">,</span> <span class="n">parentKeyFunction</span><span class="o">,</span> <span class="n">keyFunction</span><span class="o">,</span> <span class="n">setChildrenFunction</span><span class="o">,</span> <span class="n">rootParentValue</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/***
+</span><span class="cm">     * 构建树，并且对结果集做升序处理
+</span><span class="cm">     *
+</span><span class="cm">     * @param listData 需要构建的结构集
+</span><span class="cm">     * @param parentKeyFunction 父节点
+</span><span class="cm">     * @param keyFunction 主键
+</span><span class="cm">     * @param setChildrenFunction 子集
+</span><span class="cm">     * @param rootParentValue 父节点的值
+</span><span class="cm">     * @param sortFunction 排序字段
+</span><span class="cm">     * @return java.util.List&lt;T&gt;
+</span><span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">U</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&gt;</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">buildAscTree</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">listData</span><span class="o">,</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">U</span><span class="o">&gt;</span> <span class="n">parentKeyFunction</span><span class="o">,</span>
+                                                                 <span class="n">Function</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="o">?</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&gt;</span> <span class="n">keyFunction</span><span class="o">,</span> <span class="n">BiConsumer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="n">setChildrenFunction</span><span class="o">,</span> <span class="n">U</span> <span class="n">rootParentValue</span><span class="o">,</span>
+                                                                 <span class="n">Function</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="o">?</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&gt;</span> <span class="n">sortFunction</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">resultList</span> <span class="o">=</span>
+                <span class="n">buildTree</span><span class="o">(</span><span class="n">listData</span><span class="o">,</span> <span class="n">parentKeyFunction</span><span class="o">,</span> <span class="n">keyFunction</span><span class="o">,</span> <span class="n">setChildrenFunction</span><span class="o">,</span> <span class="n">rootParentValue</span><span class="o">,</span> <span class="n">sortFunction</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>
+
+        <span class="k">return</span> <span class="n">sortList</span><span class="o">(</span><span class="n">resultList</span><span class="o">,</span> <span class="n">sortFunction</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/***
+</span><span class="cm">     * 构建树，并且对结果集做降序处理
+</span><span class="cm">     *
+</span><span class="cm">     * @param listData 需要构建的结构集
+</span><span class="cm">     * @param parentKeyFunction 父节点
+</span><span class="cm">     * @param keyFunction 主键
+</span><span class="cm">     * @param setChildrenFunction 子集
+</span><span class="cm">     * @param rootParentValue 父节点的值
+</span><span class="cm">     * @param sortFunction 排序字段
+</span><span class="cm">     * @return java.util.List&lt;T&gt;
+</span><span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">U</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&gt;</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">buildDescTree</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">listData</span><span class="o">,</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">U</span><span class="o">&gt;</span> <span class="n">parentKeyFunction</span><span class="o">,</span>
+                                                                  <span class="n">Function</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="o">?</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&gt;</span> <span class="n">keyFunction</span><span class="o">,</span> <span class="n">BiConsumer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="n">setChildrenFunction</span><span class="o">,</span> <span class="n">U</span> <span class="n">rootParentValue</span><span class="o">,</span>
+                                                                  <span class="n">Function</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="o">?</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&gt;</span> <span class="n">sortFunction</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">resultList</span> <span class="o">=</span>
+                <span class="n">buildTree</span><span class="o">(</span><span class="n">listData</span><span class="o">,</span> <span class="n">parentKeyFunction</span><span class="o">,</span> <span class="n">keyFunction</span><span class="o">,</span> <span class="n">setChildrenFunction</span><span class="o">,</span> <span class="n">rootParentValue</span><span class="o">,</span> <span class="n">sortFunction</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>
+
+        <span class="k">return</span> <span class="n">sortList</span><span class="o">(</span><span class="n">resultList</span><span class="o">,</span> <span class="n">sortFunction</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">U</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&gt;</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">buildTree</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">listData</span><span class="o">,</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">U</span><span class="o">&gt;</span> <span class="n">parentKeyFunction</span><span class="o">,</span>
+                                                               <span class="n">Function</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="o">?</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&gt;</span> <span class="n">keyFunction</span><span class="o">,</span> <span class="n">BiConsumer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="n">setChildrenFunction</span><span class="o">,</span> <span class="n">U</span> <span class="n">rootParentValue</span><span class="o">,</span>
+                                                               <span class="n">Function</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="o">?</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&gt;</span> <span class="n">sortFunction</span><span class="o">,</span> <span class="n">Integer</span> <span class="n">sortedFlag</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 筛选出根节点
+</span><span class="c1"></span>        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Comparable</span><span class="o">,</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">rootKeyMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="c1">// 所有的节点
+</span><span class="c1"></span>        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Comparable</span><span class="o">,</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">allKeyMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="c1">// 存id:List&lt;ChildrenId&gt;
+</span><span class="c1"></span>        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Comparable</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Comparable</span><span class="o">&gt;&gt;</span> <span class="n">keyParentKeyMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="n">T</span> <span class="n">t</span> <span class="o">:</span> <span class="n">listData</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Comparable</span> <span class="n">key</span> <span class="o">=</span> <span class="n">keyFunction</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">t</span><span class="o">);</span>
+            <span class="n">Comparable</span> <span class="n">parentKey</span> <span class="o">=</span> <span class="n">parentKeyFunction</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">t</span><span class="o">);</span>
+            <span class="c1">// 如果根节点标识为null，值也为null，表示为根节点
+</span><span class="c1"></span>            <span class="k">if</span> <span class="o">(</span><span class="n">rootParentValue</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">parentKeyFunction</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">t</span><span class="o">)</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">rootKeyMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">t</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="c1">// 根节点标识有值，值相同表示为根节点
+</span><span class="c1"></span>            <span class="k">if</span> <span class="o">(</span><span class="n">rootParentValue</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">parentKeyFunction</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">t</span><span class="o">).</span><span class="na">compareTo</span><span class="o">(</span><span class="n">rootParentValue</span><span class="o">)</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">rootKeyMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">t</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="n">allKeyMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">t</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">parentKey</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">List</span><span class="o">&lt;</span><span class="n">Comparable</span><span class="o">&gt;</span> <span class="n">children</span> <span class="o">=</span> <span class="n">keyParentKeyMap</span><span class="o">.</span><span class="na">getOrDefault</span><span class="o">(</span><span class="n">parentKey</span><span class="o">,</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;());</span>
+                <span class="n">children</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+                <span class="n">keyParentKeyMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">parentKey</span><span class="o">,</span> <span class="n">children</span><span class="o">);</span>
             <span class="o">}</span>
         <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="cm">/**
-</span><span class="cm">     * 判断当前对象是不是父级对象的子级
-</span><span class="cm">     *
-</span><span class="cm">     * @param t    父对象
-</span><span class="cm">     * @param item 子对象
-</span><span class="cm">     * @return true:是; false:不是
-</span><span class="cm">     */</span>
-    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isChild</span><span class="o">(</span><span class="n">T</span> <span class="n">t</span><span class="o">,</span> <span class="n">T</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">rootValue</span> <span class="o">=</span> <span class="n">getValueByProperty</span><span class="o">(</span><span class="n">t</span><span class="o">,</span> <span class="n">rootKey</span><span class="o">);</span>
-        <span class="n">String</span> <span class="n">childParentValue</span> <span class="o">=</span> <span class="n">getValueByProperty</span><span class="o">(</span><span class="n">item</span><span class="o">,</span> <span class="n">childKey</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">rootValue</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">childParentValue</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="cm">/**
-</span><span class="cm">     * 通过属性获取属性的值
-</span><span class="cm">     *
-</span><span class="cm">     * @param t   对象
-</span><span class="cm">     * @param key 属性
-</span><span class="cm">     * @return 属性的值
-</span><span class="cm">     */</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="nf">getValueByProperty</span><span class="o">(</span><span class="n">T</span> <span class="n">t</span><span class="o">,</span> <span class="n">String</span> <span class="n">key</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">PropertyDescriptor</span> <span class="n">keyProperty</span> <span class="o">=</span> <span class="n">getPropertyDescriptor</span><span class="o">(</span><span class="n">t</span><span class="o">,</span> <span class="n">key</span><span class="o">);</span>
-
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="k">assert</span> <span class="n">keyProperty</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span>
-            <span class="n">Method</span> <span class="n">keyMethod</span> <span class="o">=</span> <span class="n">keyProperty</span><span class="o">.</span><span class="na">getReadMethod</span><span class="o">();</span>
-            <span class="k">return</span> <span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">keyMethod</span><span class="o">.</span><span class="na">invoke</span><span class="o">(</span><span class="n">t</span><span class="o">));</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">returnList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="c1">// 封装根节点数据
+</span><span class="c1"></span>        <span class="k">for</span> <span class="o">(</span><span class="n">Comparable</span> <span class="n">comparable</span> <span class="o">:</span> <span class="n">rootKeyMap</span><span class="o">.</span><span class="na">keySet</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">setChildren</span><span class="o">(</span><span class="n">comparable</span><span class="o">,</span> <span class="n">returnList</span><span class="o">,</span> <span class="n">allKeyMap</span><span class="o">,</span> <span class="n">keyParentKeyMap</span><span class="o">,</span> <span class="n">setChildrenFunction</span><span class="o">,</span> <span class="n">sortFunction</span><span class="o">,</span>
+                    <span class="n">sortedFlag</span><span class="o">);</span>
         <span class="o">}</span>
-        <span class="k">return</span> <span class="s">&#34;&#34;</span><span class="o">;</span>
+
+        <span class="k">return</span> <span class="n">returnList</span><span class="o">;</span>
     <span class="o">}</span>
 
-    <span class="cm">/**
-</span><span class="cm">     * 给子级属性赋值
-</span><span class="cm">     *
-</span><span class="cm">     * @param t    对象
-</span><span class="cm">     * @param list 子菜单集合
-</span><span class="cm">     */</span>
-    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">setValueByProperty</span><span class="o">(</span><span class="n">T</span> <span class="n">t</span><span class="o">,</span> <span class="n">Collection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">PropertyDescriptor</span> <span class="n">keyProperty</span> <span class="o">=</span> <span class="n">getPropertyDescriptor</span><span class="o">(</span><span class="n">t</span><span class="o">,</span> <span class="n">childProperty</span><span class="o">);</span>
-        <span class="c1">//获取getCurrentPage()方法
-</span><span class="c1"></span>        <span class="k">try</span> <span class="o">{</span>
-            <span class="k">assert</span> <span class="n">keyProperty</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span>
-            <span class="n">Method</span> <span class="n">keyMethod</span> <span class="o">=</span> <span class="n">keyProperty</span><span class="o">.</span><span class="na">getWriteMethod</span><span class="o">();</span>
-            <span class="n">keyMethod</span><span class="o">.</span><span class="na">invoke</span><span class="o">(</span><span class="n">t</span><span class="o">,</span> <span class="n">list</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">setChildren</span><span class="o">(</span><span class="n">Comparable</span> <span class="n">comparable</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">childrenList</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Comparable</span><span class="o">,</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">childrenKeyMap</span><span class="o">,</span>
+                                        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Comparable</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Comparable</span><span class="o">&gt;&gt;</span> <span class="n">keyParentKeyMap</span><span class="o">,</span> <span class="n">BiConsumer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="n">setChildrenFunction</span><span class="o">,</span>
+                                        <span class="n">Function</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="o">?</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&gt;</span> <span class="n">sortFunction</span><span class="o">,</span> <span class="n">Integer</span> <span class="n">sortedFlag</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">T</span> <span class="n">t</span> <span class="o">=</span> <span class="n">childrenKeyMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">comparable</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">keyParentKeyMap</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">comparable</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">subChildrenList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+            <span class="n">List</span><span class="o">&lt;</span><span class="n">Comparable</span><span class="o">&gt;</span> <span class="n">childrenComparable</span> <span class="o">=</span> <span class="n">keyParentKeyMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">comparable</span><span class="o">);</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">Comparable</span> <span class="n">c</span> <span class="o">:</span> <span class="n">childrenComparable</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">setChildren</span><span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="n">subChildrenList</span><span class="o">,</span> <span class="n">childrenKeyMap</span><span class="o">,</span> <span class="n">keyParentKeyMap</span><span class="o">,</span> <span class="n">setChildrenFunction</span><span class="o">,</span> <span class="n">sortFunction</span><span class="o">,</span>
+                        <span class="n">sortedFlag</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="n">subChildrenList</span> <span class="o">=</span> <span class="n">sortList</span><span class="o">(</span><span class="n">subChildrenList</span><span class="o">,</span> <span class="n">sortFunction</span><span class="o">,</span> <span class="n">sortedFlag</span><span class="o">);</span>
+            <span class="n">setChildrenFunction</span><span class="o">.</span><span class="na">accept</span><span class="o">(</span><span class="n">t</span><span class="o">,</span> <span class="n">subChildrenList</span><span class="o">);</span>
+
         <span class="o">}</span>
+        <span class="n">childrenList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">t</span><span class="o">);</span>
+
     <span class="o">}</span>
 
-    <span class="cm">/**
-</span><span class="cm">     * 通过反射获取中的属性
-</span><span class="cm">     *
-</span><span class="cm">     * @param t   对象
-</span><span class="cm">     * @param key 属性
-</span><span class="cm">     * @return PropertyDescriptor
-</span><span class="cm">     */</span>
-    <span class="kd">private</span> <span class="n">PropertyDescriptor</span> <span class="nf">getPropertyDescriptor</span><span class="o">(</span><span class="n">T</span> <span class="n">t</span><span class="o">,</span> <span class="n">String</span> <span class="n">key</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Class</span><span class="o">&lt;?&gt;</span> <span class="n">clazz</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="na">getClass</span><span class="o">();</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="k">new</span> <span class="n">PropertyDescriptor</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">clazz</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">sortList</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="o">?</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&gt;</span> <span class="n">sortFunction</span><span class="o">,</span>
+                                        <span class="n">Integer</span> <span class="n">sortedFlag</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">sortFunction</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">sortedFlag</span> <span class="o">==</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;)</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">sorted</span><span class="o">(</span><span class="n">Comparator</span><span class="o">.</span><span class="na">comparing</span><span class="o">(</span><span class="n">sortFunction</span><span class="o">).</span><span class="na">reversed</span><span class="o">())</span>
+                        <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;)</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">sorted</span><span class="o">(</span><span class="n">Comparator</span><span class="o">.</span><span class="na">comparing</span><span class="o">(</span><span class="n">sortFunction</span><span class="o">)).</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+            <span class="o">}</span>
         <span class="o">}</span>
+        <span class="k">return</span> <span class="n">list</span><span class="o">;</span>
     <span class="o">}</span>
-
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -677,20 +584,22 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Menu</span><span class="o">&gt;</span> <span class="nf">treeMenu</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">Menu</span><span class="o">&gt;</span> <span class="n">menuList</span> <span class="o">=</span> <span class="n">list</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Menu</span><span class="o">&gt;</span> <span class="nf">treeMenu</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Menu</span><span class="o">&gt;</span> <span class="n">menuList</span><span class="o">)</span> <span class="o">{</span>
         <span class="cm">/*
-</span><span class="cm">         * 使用构造方法给工具类赋值
-</span><span class="cm">         * @param rootValue     顶级菜单的父级值                 这里就是parentId的值
-</span><span class="cm">         * @param childKey      实体类中对应父级菜单的属性        这里是parentId
-</span><span class="cm">         * @param rootKey       实体类中父级的属性               这里是id
-</span><span class="cm">         * @param childProperty 实体类中对应的放置子菜单的属性     这里是children
-</span><span class="cm">         * @param list          所有的树状菜单数据
+</span><span class="cm">         * 构建树
+</span><span class="cm">         *
+</span><span class="cm">         * @param listData 需要构建的结果集              这里是menuList
+</span><span class="cm">         * @param parentKeyFunction 父节点             这里是parentId
+</span><span class="cm">         * @param keyFunction 主键                     这里是id
+</span><span class="cm">         * @param setChildrenFunction 子集             这里是children
+</span><span class="cm">         * @param rootParentValue 父节点的值            这里null
+</span><span class="cm">         * @return java.util.List&lt;T&gt;
 </span><span class="cm">         */</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">TreeMenuUtil</span><span class="o">&lt;&gt;(</span><span class="kc">null</span><span class="o">,</span><span class="s">&#34;parentId&#34;</span><span class="o">,</span> <span class="s">&#34;id&#34;</span><span class="o">,</span> <span class="s">&#34;children&#34;</span><span class="o">,</span> <span class="n">menuList</span><span class="o">).</span><span class="na">rootMenu</span><span class="o">();</span>
+        <span class="k">return</span> <span class="n">TreeUtil</span><span class="o">.</span><span class="na">buildTree</span><span class="o">(</span><span class="n">menuList</span><span class="o">,</span> <span class="n">Menu</span><span class="o">::</span><span class="n">getParentId</span><span class="o">,</span> <span class="n">Menu</span><span class="o">::</span><span class="n">getId</span><span class="o">,</span> <span class="n">Menu</span><span class="o">::</span><span class="n">setChildren</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
     <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
