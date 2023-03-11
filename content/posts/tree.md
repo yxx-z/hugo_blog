@@ -2,7 +2,7 @@
 title: java中通用树状菜单工具类
 subtitle:
 date: 2023-03-10T15:32:40+08:00
-draft: true
+draft: false
 author:
   name: yxx
   link:
@@ -38,6 +38,7 @@ repost:
 ---
 开发中经常遇到树状结构，每次都要写比较麻烦。这里写了一个工具类简化其中的步骤
 <!--more-->
+这里用了java8函数式编程特性
 话不多说，上代码
 ****
 </br>
@@ -106,192 +107,145 @@ public class Menu implements Serializable {
 ****
 工具类
 ```java
-import cn.hutool.core.collection.CollUtil;
-import cn.hutool.core.text.CharSequenceUtil;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
+package com.yunjia.eduction.utils.tree;
 
-import java.beans.PropertyDescriptor;
-import java.lang.reflect.Method;
 import java.util.*;
+import java.util.function.BiConsumer;
+import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @author yxx
- * @apiNote 返回层级菜单
- * @date 2023-03-10 14:51
+ * @apiNote 通用树形工具类
+ * @since 2023-03-11 14:22
  */
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Accessors(chain = true)
-public class TreeMenuUtil<T> {
-    /**
-     * 顶层节点的值
-     */
-    private String rootValue;
-    /**
-     * 对应父节点的子属性
-     */
-    private String childKey;
-    /**
-     * 父节点的属性值
-     */
-    private String rootKey;
-    /**
-     * 子菜单放置的字段
-     */
-    private String childProperty;
-    /**
-     * 要过滤的集合
-     */
-    private List<T> list;
+public class TreeUtil {
 
-    /**
-     * @return List
-     * @apiNote 返回树状菜单
-     */
-    public List<T> rootMenu() {
-        //判断rootValue是否为空，如果为空的话给rootValue赋值
-        ifNullRootValueSetValue();
-        //筛选出来顶级目录
-        List<T> rootList = list.stream()
-                .filter(item -> CharSequenceUtil.equals(rootValue, getValueByProperty(item, childKey)))
-                .collect(Collectors.toList());
-        //从数据集合中剔除顶层目录，减少后续遍历次数，加快速度
-        list.removeAll(rootList);
-        //如果list不为空的话则遍历赋值子菜单
-        if (CollUtil.isNotEmpty(rootList)) {
-            for (T t : rootList) {
-                setChildren(t, list);
-            }
-            return rootList;
-        } else {
-            return list;
-        }
-    }
 
-    /**
-     * 判断rootKey是空值的话则赋值
-     */
-    private void ifNullRootValueSetValue() {
-        if (CharSequenceUtil.isBlank(rootValue)) {
-            Set<String> rootValueSet = list.stream()
-                    .map(m -> getValueByProperty(m, rootKey))
-                    .collect(Collectors.toSet());
-            Set<String> childValueSet = list.stream()
-                    .map(m -> getValueByProperty(m, childKey))
-                    .collect(Collectors.toSet());
-            //将childKey（parentId）中的数据全部赋值过来
-            Set<String> resultList = new HashSet<>(childValueSet);
-            //算出childValueSet和rootValueSet的交集
-            childValueSet.retainAll(rootValueSet);
-            // 算出childValueSet 与交集不同的部分
-            resultList.removeAll(childValueSet);
-            //如果有差集的话，把第一个数据返回到rootValue中
-            if (CollUtil.isNotEmpty(resultList)) {
-                rootValue = String.valueOf(resultList.toArray()[0]);
-            }
-        }
-    }
-
-    /**
-     * 给父级菜单赋值子菜单
+    /***
+     * 构建树
      *
-     * @param t    父菜单对象
-     * @param list 所有数据
+     * @param listData 需要构建的结果集
+     * @param parentKeyFunction 父节点id
+     * @param keyFunction 主键
+     * @param setChildrenFunction 子集
+     * @param rootParentValue 父节点的值 0就填0 null就填null
+     * @return java.util.List<T>
      */
-    private void setChildren(T t, List<T> list) {
-        String childPropertyTypeName = Objects.requireNonNull(getPropertyDescriptor(t, childProperty)).getPropertyType().getName();
-        Stream<T> childStream = list.stream()
-                .filter(item -> isChild(t, item));
-        Collection<T> childList;
-        if (childPropertyTypeName.contains("Set")) {
-            childList = childStream.collect(Collectors.toSet());
-            setValueByProperty(t, childList);
-        } else {
-            childList = childStream.collect(Collectors.toList());
-            setValueByProperty(t, childList);
-        }
-        list.removeAll(childList);
-        if (CollUtil.isNotEmpty(childList)) {
-            for (T item : childList) {
-                setChildren(item, list);
+    public static <T, U extends Comparable> List<T> buildTree(List<T> listData, Function<T, U> parentKeyFunction,
+                                                              Function<T, ? extends Comparable> keyFunction, BiConsumer<T, List<T>> setChildrenFunction, U rootParentValue) {
+        return buildTree(listData, parentKeyFunction, keyFunction, setChildrenFunction, rootParentValue, null, null);
+    }
+
+    /***
+     * 构建树，并且对结果集做升序处理
+     *
+     * @param listData 需要构建的结构集
+     * @param parentKeyFunction 父节点
+     * @param keyFunction 主键
+     * @param setChildrenFunction 子集
+     * @param rootParentValue 父节点的值
+     * @param sortFunction 排序字段
+     * @return java.util.List<T>
+     */
+    public static <T, U extends Comparable> List<T> buildAscTree(List<T> listData, Function<T, U> parentKeyFunction,
+                                                                 Function<T, ? extends Comparable> keyFunction, BiConsumer<T, List<T>> setChildrenFunction, U rootParentValue,
+                                                                 Function<T, ? extends Comparable> sortFunction) {
+        List<T> resultList =
+                buildTree(listData, parentKeyFunction, keyFunction, setChildrenFunction, rootParentValue, sortFunction, 0);
+
+        return sortList(resultList, sortFunction, 0);
+    }
+
+    /***
+     * 构建树，并且对结果集做降序处理
+     *
+     * @param listData 需要构建的结构集
+     * @param parentKeyFunction 父节点
+     * @param keyFunction 主键
+     * @param setChildrenFunction 子集
+     * @param rootParentValue 父节点的值
+     * @param sortFunction 排序字段
+     * @return java.util.List<T>
+     */
+    public static <T, U extends Comparable> List<T> buildDescTree(List<T> listData, Function<T, U> parentKeyFunction,
+                                                                  Function<T, ? extends Comparable> keyFunction, BiConsumer<T, List<T>> setChildrenFunction, U rootParentValue,
+                                                                  Function<T, ? extends Comparable> sortFunction) {
+        List<T> resultList =
+                buildTree(listData, parentKeyFunction, keyFunction, setChildrenFunction, rootParentValue, sortFunction, 1);
+
+        return sortList(resultList, sortFunction, 1);
+    }
+
+    private static <T, U extends Comparable> List<T> buildTree(List<T> listData, Function<T, U> parentKeyFunction,
+                                                               Function<T, ? extends Comparable> keyFunction, BiConsumer<T, List<T>> setChildrenFunction, U rootParentValue,
+                                                               Function<T, ? extends Comparable> sortFunction, Integer sortedFlag) {
+        // 筛选出根节点
+        Map<Comparable, T> rootKeyMap = new HashMap<>();
+        // 所有的节点
+        Map<Comparable, T> allKeyMap = new HashMap<>();
+        // 存id:List<ChildrenId>
+        Map<Comparable, List<Comparable>> keyParentKeyMap = new HashMap<>();
+
+        for (T t : listData) {
+            Comparable key = keyFunction.apply(t);
+            Comparable parentKey = parentKeyFunction.apply(t);
+            // 如果根节点标识为null，值也为null，表示为根节点
+            if (rootParentValue == null && parentKeyFunction.apply(t) == null) {
+                rootKeyMap.put(key, t);
+            }
+            // 根节点标识有值，值相同表示为根节点
+            if (rootParentValue != null && parentKeyFunction.apply(t).compareTo(rootParentValue) == 0) {
+                rootKeyMap.put(key, t);
+            }
+            allKeyMap.put(key, t);
+            if (parentKey != null) {
+                List<Comparable> children = keyParentKeyMap.getOrDefault(parentKey, new ArrayList<>());
+                children.add(key);
+                keyParentKeyMap.put(parentKey, children);
             }
         }
-    }
-
-    /**
-     * 判断当前对象是不是父级对象的子级
-     *
-     * @param t    父对象
-     * @param item 子对象
-     * @return true:是; false:不是
-     */
-    private boolean isChild(T t, T item) {
-        rootValue = getValueByProperty(t, rootKey);
-        String childParentValue = getValueByProperty(item, childKey);
-        return rootValue.equals(childParentValue);
-    }
-
-    /**
-     * 通过属性获取属性的值
-     *
-     * @param t   对象
-     * @param key 属性
-     * @return 属性的值
-     */
-    private String getValueByProperty(T t, String key) {
-        PropertyDescriptor keyProperty = getPropertyDescriptor(t, key);
-
-        try {
-            assert keyProperty != null;
-            Method keyMethod = keyProperty.getReadMethod();
-            return String.valueOf(keyMethod.invoke(t));
-        } catch (Exception e) {
-            e.printStackTrace();
+        List<T> returnList = new ArrayList<>();
+        // 封装根节点数据
+        for (Comparable comparable : rootKeyMap.keySet()) {
+            setChildren(comparable, returnList, allKeyMap, keyParentKeyMap, setChildrenFunction, sortFunction,
+                    sortedFlag);
         }
-        return "";
+
+        return returnList;
     }
 
-    /**
-     * 给子级属性赋值
-     *
-     * @param t    对象
-     * @param list 子菜单集合
-     */
-    private void setValueByProperty(T t, Collection<T> list) {
-        PropertyDescriptor keyProperty = getPropertyDescriptor(t, childProperty);
-        //获取getCurrentPage()方法
-        try {
-            assert keyProperty != null;
-            Method keyMethod = keyProperty.getWriteMethod();
-            keyMethod.invoke(t, list);
-        } catch (Exception e) {
-            e.printStackTrace();
+    private static <T> void setChildren(Comparable comparable, List<T> childrenList, Map<Comparable, T> childrenKeyMap,
+                                        Map<Comparable, List<Comparable>> keyParentKeyMap, BiConsumer<T, List<T>> setChildrenFunction,
+                                        Function<T, ? extends Comparable> sortFunction, Integer sortedFlag) {
+        T t = childrenKeyMap.get(comparable);
+        if (keyParentKeyMap.containsKey(comparable)) {
+            List<T> subChildrenList = new ArrayList<>();
+            List<Comparable> childrenComparable = keyParentKeyMap.get(comparable);
+            for (Comparable c : childrenComparable) {
+                setChildren(c, subChildrenList, childrenKeyMap, keyParentKeyMap, setChildrenFunction, sortFunction,
+                        sortedFlag);
+            }
+            subChildrenList = sortList(subChildrenList, sortFunction, sortedFlag);
+            setChildrenFunction.accept(t, subChildrenList);
+
         }
+        childrenList.add(t);
+
     }
 
-    /**
-     * 通过反射获取中的属性
-     *
-     * @param t   对象
-     * @param key 属性
-     * @return PropertyDescriptor
-     */
-    private PropertyDescriptor getPropertyDescriptor(T t, String key) {
-        Class<?> clazz = t.getClass();
-        try {
-            return new PropertyDescriptor(key, clazz);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+    private static <T> List<T> sortList(List<T> list, Function<T, ? extends Comparable> sortFunction,
+                                        Integer sortedFlag) {
+        if (sortFunction != null) {
+            if (sortedFlag == 1) {
+                return (List<T>) list.stream().sorted(Comparator.comparing(sortFunction).reversed())
+                        .collect(Collectors.toList());
+            } else {
+                return (List<T>) list.stream().sorted(Comparator.comparing(sortFunction)).collect(Collectors.toList());
+            }
         }
+        return list;
     }
-
 }
 ```
 ***
@@ -300,16 +254,17 @@ public class TreeMenuUtil<T> {
 
 ```java
 @Override
-    public List<Menu> treeMenu() {
-        List<Menu> menuList = list();
+    public List<Menu> treeMenu(List<Menu> menuList) {
         /*
-         * 使用构造方法给工具类赋值
-         * @param rootValue     顶级菜单的父级值                 这里就是parentId的值
-         * @param childKey      实体类中对应父级菜单的属性        这里是parentId
-         * @param rootKey       实体类中父级的属性               这里是id
-         * @param childProperty 实体类中对应的放置子菜单的属性     这里是children
-         * @param list          所有的树状菜单数据
+         * 构建树
+         *
+         * @param listData 需要构建的结果集              这里是menuList
+         * @param parentKeyFunction 父节点             这里是parentId
+         * @param keyFunction 主键                     这里是id
+         * @param setChildrenFunction 子集             这里是children
+         * @param rootParentValue 父节点的值            这里null
+         * @return java.util.List<T>
          */
-        return new TreeMenuUtil<>(null,"parentId", "id", "children", menuList).rootMenu();
+        return TreeUtil.buildTree(menuList, Menu::getParentId, Menu::getId, Menu::setChildren, null);
     }
 ```
