@@ -6,8 +6,8 @@
 话不多说，上代码
 ****
 </br>
-菜单类
 
+### 菜单类
 ```java
 import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModelProperty;
@@ -69,7 +69,8 @@ public class Menu implements Serializable {
 }
 ```
 ****
-工具类
+
+### 工具类
 ```java
 package com.yunjia.eduction.utils.tree;
 
@@ -214,8 +215,7 @@ public class TreeUtil {
 ```
 ***
 
-使用
-
+### 使用
 ```java
 @Override
     public List<Menu> treeMenu(List<Menu> menuList) {
