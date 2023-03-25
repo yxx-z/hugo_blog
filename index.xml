@@ -4,9 +4,17 @@
     <link>http://localhost:1313/</link>
     <description>YBLog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>yangxx@88.com (yxx)</managingEditor>
-      <webMaster>yangxx@88.com (yxx)</webMaster><lastBuildDate>Fri, 10 Mar 2023 15:32:40 &#43;0800</lastBuildDate>
+      <webMaster>yangxx@88.com (yxx)</webMaster><lastBuildDate>Sat, 25 Mar 2023 14:37:02 &#43;0800</lastBuildDate>
       <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>手动分页工具类</title>
+  <link>http://localhost:1313/pageutil/</link>
+  <pubDate>Sat, 25 Mar 2023 14:37:02 &#43;0800</pubDate>
+  <author>map[avatar:&lt;nil&gt; email:yangxx@88.com link:&lt;nil&gt; name:yxx]</author>
+  <guid>http://localhost:1313/pageutil/</guid>
+  <description><![CDATA[<p>通用手动分页工具类,返回mybatis-plus中IPage&lt;T&gt;格式。</p>]]></description>
+</item>
+<item>
   <title>java中通用树状菜单工具类</title>
   <link>http://localhost:1313/tree/</link>
   <pubDate>Fri, 10 Mar 2023 15:32:40 &#43;0800</pubDate>

@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>分页 - 标签 - YBLog</title>
+    <link>http://localhost:1313/tags/%E5%88%86%E9%A1%B5/</link>
+    <description>分页 - 标签 - YBLog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>yangxx@88.com (yxx)</managingEditor>
+      <webMaster>yangxx@88.com (yxx)</webMaster><lastBuildDate>Sat, 25 Mar 2023 14:37:02 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%88%86%E9%A1%B5/" rel="self" type="application/rss+xml" /><item>
+  <title>手动分页工具类</title>
+  <link>http://localhost:1313/pageutil/</link>
+  <pubDate>Sat, 25 Mar 2023 14:37:02 &#43;0800</pubDate>
+  <author>map[avatar:&lt;nil&gt; email:yangxx@88.com link:&lt;nil&gt; name:yxx]</author>
+  <guid>http://localhost:1313/pageutil/</guid>
+  <description><![CDATA[<p>通用手动分页工具类,返回mybatis-plus中IPage&lt;T&gt;格式。</p>]]></description>
+</item>
+</channel>
+</rss>
