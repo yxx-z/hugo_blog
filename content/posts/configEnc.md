@@ -60,6 +60,8 @@ repost:
   jasypt:
     encryptor:
       password: pwd
+      algorithm: PBEWithMD5AndDES
+      iv-generator-classname: org.jasypt.iv.NoIvGenerator
 ```
 <p style="color:red">注：pwd为密钥，自己随意配置</p>
 这里的配置是在开发时候，毕竟如果上线的话密钥放在yml里 加不加密一个样。</br>
@@ -111,6 +113,8 @@ spring:
   jasypt:
       encryptor:
         password: pwd
+        algorithm: PBEWithMD5AndDES
+        iv-generator-classname: org.jasypt.iv.NoIvGenerator
 ```
 删除以上部分。但是加密过的数据，例如mysql的url ENC(....)部分保持不变。
 然后在启动jar包的时候增加一下命令
