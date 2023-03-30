@@ -76,11 +76,11 @@ spring:
 ```yml
   jasypt:
       encryptor:
-        password: pwd
+        password: pwd   #上线时候删除这一行
         algorithm: PBEWithMD5AndDES
         iv-generator-classname: org.jasypt.iv.NoIvGenerator
 ```
-删除以上部分。但是加密过的数据，例如mysql的url ENC(....)部分保持不变。
+删除以上部分中的 password。其它保留。加密过的数据也保留，例如mysql的url ENC(....)部分保持不变。
 然后在启动jar包的时候增加一下命令
 <p style="color:red">-Djasypt.encryptor.password=pwd</p>
 
