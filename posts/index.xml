@@ -4,7 +4,15 @@
     <link>http://localhost:1313/posts/</link>
     <description>所有文章 | YBLog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>yangxx@88.com (yxx)</managingEditor>
-      <webMaster>yangxx@88.com (yxx)</webMaster><lastBuildDate>Sat, 25 Mar 2023 14:37:02 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>yangxx@88.com (yxx)</webMaster><lastBuildDate>Thu, 30 Mar 2023 14:02:17 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>SpringBoot配置文件yml内容加密</title>
+  <link>http://localhost:1313/configenc/</link>
+  <pubDate>Thu, 30 Mar 2023 14:02:17 &#43;0800</pubDate>
+  <author>map[avatar:&lt;nil&gt; email:yangxx@88.com link:&lt;nil&gt; name:yxx]</author>
+  <guid>http://localhost:1313/configenc/</guid>
+  <description><![CDATA[<p>在使用Springboot时，通常很多信息都是在application.yml中直接明文配置的，比如数据库链接信息，redis链接信息等等。但是这样是不安全的。</p>]]></description>
+</item>
+<item>
   <title>手动分页工具类</title>
   <link>http://localhost:1313/pageutil/</link>
   <pubDate>Sat, 25 Mar 2023 14:37:02 &#43;0800</pubDate>

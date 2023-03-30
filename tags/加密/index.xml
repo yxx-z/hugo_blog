@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>加密 - 标签 - YBLog</title>
+    <link>http://localhost:1313/tags/%E5%8A%A0%E5%AF%86/</link>
+    <description>加密 - 标签 - YBLog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>yangxx@88.com (yxx)</managingEditor>
+      <webMaster>yangxx@88.com (yxx)</webMaster><lastBuildDate>Thu, 30 Mar 2023 14:02:17 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%8A%A0%E5%AF%86/" rel="self" type="application/rss+xml" /><item>
+  <title>SpringBoot配置文件yml内容加密</title>
+  <link>http://localhost:1313/configenc/</link>
+  <pubDate>Thu, 30 Mar 2023 14:02:17 &#43;0800</pubDate>
+  <author>map[avatar:&lt;nil&gt; email:yangxx@88.com link:&lt;nil&gt; name:yxx]</author>
+  <guid>http://localhost:1313/configenc/</guid>
+  <description><![CDATA[<p>在使用Springboot时，通常很多信息都是在application.yml中直接明文配置的，比如数据库链接信息，redis链接信息等等。但是这样是不安全的。</p>]]></description>
+</item>
+</channel>
+</rss>
