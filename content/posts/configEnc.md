@@ -68,7 +68,7 @@ repost:
 ***
 
 ### 加密敏感数据
-为加密前mysql部分配置
+未加密前mysql部分配置
 ```yml
 spring:
   #定义数据源
