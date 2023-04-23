@@ -2,7 +2,7 @@
 title: 获取天翼网关超级管理员密码
 subtitle:
 date: 2023-04-22T15:07:26+08:00
-draft: true
+draft: false
 author:
   name: yxx
   link:
