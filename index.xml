@@ -4,9 +4,17 @@
     <link>http://localhost:1313/</link>
     <description>YBLog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>yangxx@88.com (yxx)</managingEditor>
-      <webMaster>yangxx@88.com (yxx)</webMaster><lastBuildDate>Thu, 30 Mar 2023 14:02:17 &#43;0800</lastBuildDate>
+      <webMaster>yangxx@88.com (yxx)</webMaster><lastBuildDate>Sat, 22 Apr 2023 15:07:26 &#43;0800</lastBuildDate>
       <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>获取天翼网关超级管理员密码</title>
+  <link>http://localhost:1313/dianxing/</link>
+  <pubDate>Sat, 22 Apr 2023 15:07:26 &#43;0800</pubDate>
+  <author>map[avatar:&lt;nil&gt; email:&lt;nil&gt; link:&lt;nil&gt; name:yxx]</author>
+  <guid>http://localhost:1313/dianxing/</guid>
+  <description><![CDATA[<p>获取天翼网关超级密码</p>]]></description>
+</item>
+<item>
   <title>SpringBoot配置文件yml内容加密</title>
   <link>http://localhost:1313/configenc/</link>
   <pubDate>Thu, 30 Mar 2023 14:02:17 &#43;0800</pubDate>

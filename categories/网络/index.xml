@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>网络 - 分类 - YBLog</title>
+    <link>http://localhost:1313/categories/%E7%BD%91%E7%BB%9C/</link>
+    <description>网络 - 分类 - YBLog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>yangxx@88.com (yxx)</managingEditor>
+      <webMaster>yangxx@88.com (yxx)</webMaster><lastBuildDate>Sat, 22 Apr 2023 15:07:26 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%BD%91%E7%BB%9C/" rel="self" type="application/rss+xml" /><item>
+  <title>获取天翼网关超级管理员密码</title>
+  <link>http://localhost:1313/dianxing/</link>
+  <pubDate>Sat, 22 Apr 2023 15:07:26 &#43;0800</pubDate>
+  <author>map[avatar:&lt;nil&gt; email:&lt;nil&gt; link:&lt;nil&gt; name:yxx]</author>
+  <guid>http://localhost:1313/dianxing/</guid>
+  <description><![CDATA[<p>获取天翼网关超级密码</p>]]></description>
+</item>
+</channel>
+</rss>
