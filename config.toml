@@ -49,6 +49,16 @@ theme = "FixIt"
     weight = 3
     [menu.main.params]
       icon = "fa-solid fa-tags"
+  [[menu.main]]
+    identifier = "friends"
+    pre = ""
+    post = ""
+    name = "友链"
+    url = "/friends/"
+    title = ""
+    weight = 4
+    [menu.main.params]
+      icon = "fa-solid fa-users"
 
 [params]
   #  FixIt 主题版本
@@ -56,7 +66,7 @@ theme = "FixIt"
   # 网站描述
   description = "YBLog"
   # 网站关键词
-  keywords = ["Java", "Blog"]
+  keywords = ["Java", "Blog", "YBlog"]
   # 网站默认主题样式 ["light", "dark", "auto"]
   defaultTheme = "auto"
   # 公共 git 仓库路径，仅在 enableGitInfo 设为 true 时有效
@@ -175,11 +185,11 @@ theme = "FixIt"
     license = '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
     #  网站创立时间
     [params.footer.siteTime]
-      enable = false
+      enable = true
       animate = true
       icon = "fa-solid fa-heartbeat"
       pre = ""
-      value = "" # e.g. "2023-03-09T1:15:22+08:00"
+      value = "2023-03-09" # e.g. "2023-03-09T1:15:22+08:00"
     #  页面底部行排序，可选值：["first", 0, 1, 2, 3, 4, 5, "last"]
     [params.footer.order]
       powered = 0
@@ -251,7 +261,7 @@ theme = "FixIt"
 
   #  作者的社交信息设置
   [params.social]
-    GitHub = "Lruihao"
+    GitHub = ""
     Linkedin = ""
     Twitter = ""
     Instagram = ""
@@ -318,8 +328,8 @@ theme = "FixIt"
     Ko-Fi = ""
     BuyMeaCoffee = ""
     Linktree = ""
-    QQ = ""
-    QQGroup = "awbwdTtSQ_-H5QGzeJxdWgv6JMbNehNM" # https://qun.qq.com/join.html
+    QQ = "2415925838"
+    QQGroup = "" # https://qun.qq.com/join.html
     Diaspora = ""
     CSDN = ""
     Discord = ""
@@ -460,10 +470,10 @@ theme = "FixIt"
     #  文章页面的分享信息设置
     [params.page.share]
       enable = true
-      Twitter = true
-      Facebook = true
+      Twitter = false
+      Facebook = false
       Linkedin = false
-      Whatsapp = true
+      Whatsapp = false
       Pinterest = false
       Tumblr = false
       HackerNews = false
@@ -471,19 +481,19 @@ theme = "FixIt"
       VK = false
       Buffer = false
       Xing = false
-      Line = true
+      Line = false
       Instapaper = false
       Pocket = false
       Digg = false
       Stumbleupon = false
       Flipboard = false
-      Weibo = true
+      Weibo = false
       Renren = false
-      Myspace = true
-      Blogger = true
+      Myspace = false
+      Blogger = false
       Baidu = false
       Odnoklassniki = false
-      Evernote = true
+      Evernote = false
       Skype = false
       Trello = false
       Mix = false
@@ -653,7 +663,7 @@ theme = "FixIt"
   #  盘古之白配置
   [params.pangu]
     # 适用于中文写作用户
-    enable = false
+    enable = true
     selector = "article" # 
 
   #  水印配置
@@ -743,8 +753,8 @@ theme = "FixIt"
 
   #  在左上角或者右上角显示 GitHub 开源链接
   [params.githubCorner]
-    enable = false
-    permalink = "https://github.com/hugo-fixit/FixIt"
+    enable = true
+    permalink = "https://github.com/yxx-z"
     title = "在 GitHub 上查看源代码"
     position = "right" # ["left", "right"]
 
@@ -764,7 +774,7 @@ theme = "FixIt"
 
   #  阅读进度条
   [params.readingProgress]
-    enable = false
+    enable = true
     # 可用值：["left", "right"]
     start = "left"
     # 可用值：["top", "bottom"]
@@ -777,7 +787,7 @@ theme = "FixIt"
   #  页面加载期间顶部的进度条
   # 有关详细信息：https://github.com/CodeByZach/pace
   [params.pace]
-    enable = false
+    enable = true
     # 所有可用颜色：
     # ["black", "blue", "green", "orange", "pink", "purple", "red", "silver", "white", "yellow"]
     color = "blue"
