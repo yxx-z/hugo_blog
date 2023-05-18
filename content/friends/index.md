@@ -15,10 +15,10 @@ comment:
 ---
 
 {{< admonition tip "添加您的网站" >}}
-您可以通过 [邮箱 :(fa-solid fa-envelope):](mailto:yangxx@88.com) 联系我，将您的网站添加到此页面。格式如下：
+您可以通过 [邮箱 :(fa-solid fa-envelope):](mailto:yangxx@88.com) 联系我，将您的网站邮件发送给我。格式如下：
 
 ```yml
-- nickname: <your nickname>
+  nickname: <your nickname>
   avatar: <your avatar>
   url: <your site link>
   description: <description of your site>
