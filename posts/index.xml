@@ -4,7 +4,15 @@
     <link>http://localhost:1313/posts/</link>
     <description>所有文章 | YBLog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>yangxx@88.com (yxx)</managingEditor>
-      <webMaster>yangxx@88.com (yxx)</webMaster><lastBuildDate>Sat, 22 Apr 2023 15:07:26 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>yangxx@88.com (yxx)</webMaster><lastBuildDate>Mon, 12 Jun 2023 18:17:59 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>郑州数字马力二面</title>
+  <link>http://localhost:1313/mianshi/</link>
+  <pubDate>Mon, 12 Jun 2023 18:17:59 &#43;0800</pubDate>
+  <author>map[avatar:&lt;nil&gt; email:yangxx@88.com link:&lt;nil&gt; name:yxx]</author>
+  <guid>http://localhost:1313/mianshi/</guid>
+  <description><![CDATA[<p>郑州数字马力java二面(凉)</p>]]></description>
+</item>
+<item>
   <title>获取天翼网关超级管理员密码</title>
   <link>http://localhost:1313/dianxing/</link>
   <pubDate>Sat, 22 Apr 2023 15:07:26 &#43;0800</pubDate>
