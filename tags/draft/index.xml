@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>draft - 标签 - YBLog</title>
+    <link>http://localhost:1313/tags/draft/</link>
+    <description>draft - 标签 - YBLog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>yangxx@88.com (yxx)</managingEditor>
+      <webMaster>yangxx@88.com (yxx)</webMaster><lastBuildDate>Sat, 12 Aug 2023 18:48:25 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/draft/" rel="self" type="application/rss+xml" /><item>
+  <title>mysql 开启主从</title>
+  <link>http://localhost:1313/mysql_slave/</link>
+  <pubDate>Sat, 12 Aug 2023 18:48:25 &#43;0800</pubDate>
+  <author>map[avatar:&lt;nil&gt; email:&lt;nil&gt; link:&lt;nil&gt; name:&lt;nil&gt;]</author>
+  <guid>http://localhost:1313/mysql_slave/</guid>
+  <description><![CDATA[<p>mysql 开启主从</p>]]></description>
+</item>
+</channel>
+</rss>
