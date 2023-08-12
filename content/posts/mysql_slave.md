@@ -14,9 +14,9 @@ license:
 comment: false
 weight: 0
 tags:
-  - draft
+  - 主从
 categories:
-  - draft
+  - mysql
 hiddenFromHomePage: false
 hiddenFromSearch: false
 summary:
