@@ -4,7 +4,7 @@ subtitle:
 date: 2023-08-12T18:48:25+08:00
 draft: false
 author:
-  name:
+  name: yxx
   link:
   email:
   avatar:
