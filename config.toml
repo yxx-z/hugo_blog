@@ -240,7 +240,7 @@ theme = "FixIt"
       # Gravatar 邮箱，用于优先在主页显示的头像
       gravatarEmail = "yangxx@88.com"
       # 主页显示头像的 URL
-      avatarURL = "/images/avatar.png"
+      avatarURL = "images/avatar.png"
       #  头像菜单链接的 identifier
       avatarMenu = ""
       #  主页显示的网站标题（支持 HTML 格式）
@@ -851,7 +851,7 @@ theme = "FixIt"
   name = "yxx"
   email = "yangxx@88.com"
   link = ""
-  avatar = "/images/avatar.png" # 
+  avatar = "images/avatar.png" # 
 
 # 网站地图配置
 [sitemap]
