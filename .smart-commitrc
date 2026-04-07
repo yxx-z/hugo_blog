@@ -1,0 +1,16 @@
+# smart-commit configuration file
+# Place this file in your project root as .smart-commitrc
+
+# Language for commit messages: zh (Chinese) or en (English)
+language=zh
+
+# Whether to include a body section in commit messages: true or false
+include_body=true
+
+# Allowed conventional commit types (comma-separated)
+allowed_types=feat,fix,docs,style,refactor,perf,test,build,ci,chore,revert
+
+# DeepSeek API configuration (override defaults if needed)
+# api_key=sk-your-api-key-here
+# api_base_url=https://api.deepseek.com/v1
+# model=deepseek-chat
