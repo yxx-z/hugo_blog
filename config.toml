@@ -62,7 +62,7 @@ theme = "FixIt"
 
 [params]
   #  FixIt 主题版本
-  version = "0.2.X" # 例如："0.2.X", "0.2.15", "v0.2.15" 等
+  version = "0.4.X" # 例如："0.2.X", "0.2.15", "v0.2.15" 等
   # 网站描述
   description = "YBLog"
   # 网站关键词
@@ -692,7 +692,7 @@ theme = "FixIt"
     fontFamily = "inherit"
 
   #  不蒜子统计
-  [params.ibruce]
+  [params.busuanzi]
     enable = false
     # 在文章中开启
     enablePost = false
@@ -862,11 +862,11 @@ theme = "FixIt"
 # Permalinks 配置 (https://gohugo.io/content-management/urls#permalinks)
 [Permalinks]
   # posts = ":year/:month/:filename"
-  posts = ":filename"
+  posts = ":contentbasename"
 
 # 隐私信息配置 (https://gohugo.io/about/hugo-and-gdpr/)
 [privacy]
-  [privacy.twitter]
+  [privacy.x]
     enableDNT = true
   [privacy.youtube]
     privacyEnhanced = true
@@ -900,7 +900,6 @@ theme = "FixIt"
   page = ["HTML", "MarkDown"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
-  taxonomyTerm = ["HTML"]
 
 [module]
   [module.hugoVersion]
