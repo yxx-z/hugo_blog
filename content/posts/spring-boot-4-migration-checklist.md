@@ -1,6 +1,6 @@
 ---
 title: Spring Boot 4 升级前，先完成这份可回滚清单
-date: 2026-07-18T21:00:00+08:00
+date: 2026-07-18T13:31:15+08:00
 draft: false
 author:
   name: yxx
